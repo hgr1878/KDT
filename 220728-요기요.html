@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap" rel="stylesheet">
+<style>
+  * {
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    #wheredilivery-box {
+      position: relative;
+    }
+
+    main {
+      background-image: url('https://www.yogiyo.co.kr/mobile/image/bg-top.png?v=1');
+      width: 100%;
+      background-position: center;
+      background-size: cover;
+    }
+
+    #wheredilivery-box {
+      position: relative;
+    }
+
+    #input-box {
+      position: absolute;
+      bottom: 50px;
+      left: 300px;
+    }
+
+</style>
+</head>
+<body>
+  <div id="root">
+    <div id="header-cover">
+      <header>
+      <div id="logo-box">
+        <img id="logo-img" src="https://www.yogiyo.co.kr/mobile/image/logo-yogiyo.png?v=103bbdfa8d07ae1afa6c12bd84990fec7622a2f8" alt="">
+      </div>
+      <div id="login-box">로그인</div>
+      <div id="location-box">
+        <div>위치 알 수 없음</div>
+        <img src="https://cdn-icons-png.flaticon.com/512/17/17736.png" alt="" id="location-icon">
+      </div>
+    </header>
+    </div> 
+    <main>
+      <div id="wheredilivery-box">
+          <div id="input-box">
+          <input type="text" placeholder="건물명, 도로명, 지번으로 검색하세요">
+        </div>
+      </div> 
+    </main>
+    <div id="main2">
+      <div id="grid-box">
+        <ul id="grid-ul">
+          <li id="grid-item">
+            <div id="item-name"></div><img src="https://d5bfh7nnlp98y.cloudfront.net/2207_jiseon/220628_YGY_m7_MW_thumd_new.png" alt=""></li>
+          <li id="grid-item">
+            <div class="item-name">전체보기</div>
+            <img src="https://www.yogiyo.co.kr/mobile/image/category-01.png" alt="">
+          </li>
+          <li id="grid-item">
+            <div class="item-name">1인분 주문</div><img src="https://www.yogiyo.co.kr/mobile/image/category-onedish.png" alt="">
+          </li>
+          <li id="grid-item">
+            <div id="item-name">프렌차이즈</div><img src="https://www.yogiyo.co.kr/mobile/image/category-10.png" alt="">
+          </li>
+          <li id="grid-item">
+            <div id="item-name">치킨</div><img src="https://www.yogiyo.co.kr/mobile/image/category-02.png" alt="">
+          </li>
+          <li id="grid-item">
+            <div id="item-name">피자/양식</div><img src="https://www.yogiyo.co.kr/mobile/image/category-03.png" alt="">
+          </li>
+          <li id="grid-item">
+            <div id="item-name">중국집</div><img src="https://www.yogiyo.co.kr/mobile/image/category-04.png" alt="">
+          </li>
+          <li id="grid-item">
+            <div id="item-name">한식</div><img src="https://www.yogiyo.co.kr/mobile/image/category-05.png" alt="">
+          </li>
+          <li id="grid-item">
+            <div id="item-name">일식/돈까스</div>
+            <img src="https://www.yogiyo.co.kr/mobile/image/category-06.png" alt="">
+          </li>
+          <li id="grid-item">
+            <div id="item-name">족발/보쌈</div>
+            <img src="https://www.yogiyo.co.kr/mobile/image/category-07.png" alt="">
+          </li>
+          <li id="grid-item">
+            <div id="item-name">야식</div>
+            <img src="https://www.yogiyo.co.kr/mobile/image/category-08.png" alt="">
+          </li>
+          <li id="grid-item">
+            <div id="item-name">분식</div>
+            <img src="https://www.yogiyo.co.kr/mobile/image/category-09.png" alt="">
+          </li>
+          <li id="grid-item">
+            <div id="item-name">카페/디저트</div>
+            <img src="https://www.yogiyo.co.kr/mobile/image/category-11.png" alt="">
+          </li>
+          <li id="grid-item">
+            <div id="item-name">편의점/마트</div>
+            <img src="https://www.yogiyo.co.kr/mobile/image/category-convenience-store.png" alt="">
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="footer-cover">
+      <footer>
+      <div id="top-box">
+        <ul>
+          <li>이용약관</li>
+          <li>개인정보처리방침</li>
+          <li>포인트정책</li>
+          <li>회사소개</li>
+          <li>요기요사장님</li>
+          <li>입점문의</li>
+          <li>공지사항</li>
+        </ul>
+        <div id="sns-icon-box">
+          <div id="sns-icon"><span></span>페이스북</div>
+          <div id="sns-icon">
+            <span style='background-image: https://e7.pngegg.com/pngimages/592/265/png-clipart-computer-icons-social-media-facebook-social-network-advertising-icon-design-social-media-blue-angle.png'>
+          </span>블로그</div>
+        </div>
+      </div>
+      <div id="bottom-box">
+        <div >주식회사 위대한상상</div>
+        <div >서울시 서초구 서초대로38길 12 마제스타시티 타워2 17층 | 대표이사 : 서성원 | 사업자등록번호:211-88-68802 사업자정보확인통신판매업신고:제 2018-서울서초-2635호 | 개인정보담당자 : privacy@yogiyo.co.kr | 제휴문의 : partnership@yogiyo.co.kr | 고객만족센터 : support@yogiyo.co.kr | 호스팅 제공자: 카페24 주식회사</div>
+        <div>주식회사 위대한상상은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 상품/ 거래정보 및 거래와 관련하여 요기요에 등록된 판매자의 고의 또는 과실로 소비자에게 발생하는 손해에 대해 주식회사 위대한상상은 책임을 지지 않습니다. 상품 및 거래에 관하여 보다 정확한 정보는 해당 판매자에게 직접 확인하여 주시기 바랍니다. Copyright YOGIYO. All Rights Reserved.</div>
+      </div>
+    </footer>
+    </div>
+    
+  </div>
+  <!-- <img src="https://www.yogiyo.co.kr/mobile/image/bg-top.png?v=1" alt=""> -->
+  <script>
+    // body, root
+    const root = document.getElementById('root');
+    console.dir(root);
+    root.style.display='flex'
+    root.style.flexDirection = 'column'
+    root.style.alignItems = 'center'
+    // root.style.width = "1000px";
+    // root.style.height = "1000px";
+
+    const rooot = root.parentElement
+    rooot.style.margin = '0';
+    rooot.style.padding = '0';
+    rooot.style.display = 'flex';
+    rooot.style.justifyContent = 'center';
+
+
+    // 헤더
+    const headerCover = document.getElementById('header-cover')
+    headerCover.style.backgroundColor ='#fa0050'
+    headerCover.style.width ='100vw';
+    headerCover.style.display = 'flex';
+    headerCover.style.justifyContent = 'center'
+
+    const header = document.getElementsByTagName('header')[0]
+    header.style.height = '80px';
+    header.style.width = '1000px'
+    // header.style.border = '1px solid black'
+    // header.style.backgroundColor ='#fa0050'
+    header.style.display = 'flex';
+    header.style.justifyContent = 'space-between';
+    header.style.alignItems = 'center';
+    header.style.position = 'relavtive'
+    // header.style.marginRight = '-30%';
+    // header.style.marginLeft = '-30%';
+    // header.style.zIndex = '-1';
+
+    const logoImg = header.children[0].children[0]
+    logoImg.style.width = '100px'
+
+    const loginBox = document.getElementById('login-box')
+    loginBox.style.color = 'white';
+    loginBox.style.border = '1px solid white'
+    loginBox.style.padding = '10px 50px';
+    
+    const locationBox = document.getElementById('location-box')
+    locationBox.style.position = 'absolute'
+    locationBox.style.top = '15px';
+    locationBox.style.right = '45px';
+    // locationBox.style.border = '1px solid black';
+
+    const locationText = locationBox.firstElementChild
+    locationText.style.display = 'none'
+    locationText.style.fontWeight = '200'
+    locationText.style.fontSize = '14px';
+    
+
+    const locationIcon = document.getElementById('location-icon')
+    locationIcon.style.width ='20px';
+    locationIcon.style.filter = 'invert(100%)';
+    locationIcon.style.display = 'none'
+    locationIcon.style.position = 'absolute'
+    locationIcon.style.top = '3px'
+    locationIcon.style.right = '-25px'
+
+
+
+    // 메인
+    const main = document.getElementsByTagName('main')[0]
+    main.style.width = "100%"
+    main.style.backgroundColor = 'salmon';
+    main.style.display = 'flex'
+    main.style.justifyContent = 'center'
+    main.style.height = '230px';
+
+    // 메인 첫번째 박스
+    const wherediliveryBox = main.firstElementChild
+    wherediliveryBox.style.width = '1000px'
+
+    const inputBox = document.getElementById('input-box') 
+    inputBox.style.display = 'flex';
+    inputBox.style.justifyContent = 'center';
+    inputBox.style.alignItems = 'center';
+
+    const input = document.querySelector('input')
+    input.style.width = '400px'
+    input.style.height = '40px';
+    input.style.borderRadius = '10px';
+    input.style.border = 'none'
+    input.style.placeHolder = '건물명, 도로명, 지번으로 검색하세요';
+
+
+    // 메인 두번째 박스
+    const gridBox = document.getElementById('grid-box')
+    const gridUl = gridBox.children[0]
+    gridUl.style.listStyle = 'none';
+    gridUl.style.margin = '0';
+    gridUl.style.padding = '0';
+    gridUl.style.display = 'grid';
+    gridUl.style.gridTemplateRows = '1fr 1fr 1fr 1fr';
+    gridUl.style.gridTemplateColumns = '1fr 1fr 1fr 1fr';
+    gridUl.style.gridGap = '10px';
+    
+    const gridItem = gridUl.children
+    for (let i = 0; i < gridItem.length; i++) {
+      gridItem[i].style.height = '220px'
+      gridItem[i].style.backgroundColor = 'white'
+      gridItem[i].style.border = '1px solid #ededed'
+      gridItem[i].style.display = 'flex';
+      gridItem[i].style.justifyContent = 'flex-end';
+      gridItem[i].style.position = 'relative';
+
+      const itemName = gridItem[i].firstElementChild
+      itemName.style.position = 'absolute';
+      itemName.style.top = '15px';
+      itemName.style.left = '15px';
+      // itemName.style.fontWeight = 'bold';
+    }
+
+    
+
+    // 풋터
+    const footerCover = document.getElementById('footer-cover')
+    // footerCover.style.backgroundColor = 'blue'
+    footerCover.style.width = '100vw'
+    footerCover.style.display = 'flex'
+    footerCover.style.justifyContent = 'center'
+    const footer = document.getElementsByTagName('footer')[0]
+    footer.style.width = "1000px";
+    
+    // footer.style.backgroundColor = 'gold';
+
+    const topBox = document.getElementById('top-box')
+    topBox.style.borderTop = '1px solid gray'
+    topBox.style.borderBottom = '1px solid gray'
+    topBox.style.height = '20%';
+    topBox.style.display = 'flex';
+    topBox.style.alignItems = 'center'
+
+    const topBoxUl = document.querySelector('#top-box > ul')
+    topBoxUl.style.margin = '0';
+    topBoxUl.style.padding = '0';
+    topBoxUl.style.display = 'flex';
+    topBoxUl.style.listStyle =  'none';
+
+    const topBoxli = topBoxUl.children
+    for (let i = 0; i < topBoxli.length; i++) {
+      topBoxli[i].style.color = 'gray';
+      topBoxli[i].style.fontWeight = '300';
+      topBoxli[i].style.padding = '0 10px'
+      topBoxli[i].style.fontSize = '13px'
+      topBoxli[i].style.borderLeft = '1px solid gray';
+    }
+
+    topBoxli[0].style.borderLeft = 'none'
+
+    const snsIcon = document.getElementById('sns-icon')
+    const snsIconImg = document.querySelector('#sns-icon > span')
+    snsIconImg.style.backgroundImage = "url('https://e7.pngegg.com/pngimages/592/265/png-clipart-computer-icons-social-media-facebook-social-network-advertising-icon-design-social-media-blue-angle.png')";
+
+    const bottomBox = document.getElementById('bottom-box')
+    // bottomBox.style.border = '2px solid black'
+    bottomBox.style.display = 'flex'
+    bottomBox.style.flexDirection = 'column'
+
+    const bottomBoxText = bottomBox.children
+    bottomBoxText[0].style.margin = '20px 10px 7px 10px'
+    bottomBoxText[1].style.margin = '0px 10px 7px 10px'
+    bottomBoxText[1].style.fontSize = '13px'
+    bottomBoxText[1].style.fontWeight = '300'
+    bottomBoxText[2].style.margin = '0px 10px 7px 10px'
+    bottomBoxText[2].style.fontSize = '13px'
+    bottomBoxText[2].style.color = 'gray'
+    bottomBoxText[2].style.fontWeight = '300'
+
+
+    // 반응형
+    if (matchMedia ("screen and (min-width: 771px) and (max-width: 990px)").matches) {
+      console.log('990')
+      
+    //   root.style.padding = '0 10px';
+      
+    //   gridUl.style.gridTemplateRows = '1fr 1fr 1fr 1fr 1fr';
+    //   gridUl.style.gridTemplateColumns = '1fr 1fr 1fr';
+
+    // } else if (matchMedia ("screen and (max-width: 770px)").matches) {
+    //   root.style.padding = '0 10px';
+
+    //   header.style.height = '4%';
+    //   header.style.padding = '0 10px'
+    //   header.style.justifyContent = 'flex-start';
+    //   logoImg.style.width = '70px'
+    //   loginBox.style.border = '1px solid rgba(255,255,255,0.3)'
+    //   loginBox.style.padding = '1px 3px';
+    //   loginBox.style.fontSize = '12px';
+    //   loginBox.style.marginLeft = '7px'
+    //   // locationBox.style.position = 'relative'
+    //   locationText.style.display = 'inline-block'
+    //   locationText.style.color = 'rgb(255,255,255)';
+
+    //   // locationText.style.position = 'absolute'
+    //   // locationText.style.top = '0'
+    //   // locationText.style.right = '0'
+    //   // locationIcon.style.position = 'absolute'
+    //   // locationIcon.style.top = '0'
+    //   // locationIcon.style.right = '0'
+    //   locationIcon.style.display = 'inline-block'
+
+    //   wherediliveryBox.style.height = '45px';
+    //   wherediliveryBox.style.backgroundColor = '#fa0050';
+    //   input.style.width = '350px'
+    //   input.style.height = '35px';
+
+    //   gridUl.style.gridTemplateRows = '1fr 1fr 1fr 1fr 1fr';
+    //   gridUl.style.gridTemplateColumns = '1fr 1fr';
+    // }
+    
+      window.onresize = function(){
+      document.location.reload();
+      }
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
