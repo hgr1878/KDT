@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    body {
+      width:100vw;
+    }
+    * {
+      margin:0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* class */
+    .font-bold {
+      font-weight: bold;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .flex-center-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .justify-center {
+      justify-content: center;
+    }
+
+    .align-center {
+      align-items: center;
+    }
+
+    .f0f0f0 {
+      background-color: #f0f0f0;
+    }
+    /* header */
+    header {
+      display: flex;
+      height:10vh;
+    }
+
+    /* header logo-box */
+    #logo-box {
+      /* background-color: aqua; */
+      width: 33.333%;
+      display: flex;
+      justify-content: center;
+    }
+
+    #logo-box > div {
+      /* border: 1px solid black; */
+      display: flex;
+      align-items: flex-end;
+    }
+
+    #logo-box a img {
+      width:160px;
+      height:65px;
+      margin-right:10px;
+    }
+
+    #characters {
+      font-size: 20px;
+      position: relative;
+      bottom: 5px;
+      left:5px;
+    }
+
+    /* header search-box */
+    #search-box {
+      /* background-color: rgb(238, 192, 236); */
+      width: 33.333%;
+      align-items: flex-end;
+      justify-content: flex-end;
+    }
+
+    #search {
+      width:300px;
+      height: 40px;
+      border-radius: 20px;  
+
+    }
+
+    #search > input {
+      border: none;
+    }
+
+    
+
+    /* header menu-box */
+    #menu-box {
+      /* background-color: rgb(94, 219, 167); */
+      width: 33.333%;
+      justify-content: flex-end;
+      
+    }
+
+    #menu-box > div {
+      align-items: flex-end;
+      /* border:1px solid black; */
+      margin-right: 30px;
+    }
+
+    #menu-box > div > div {
+      font-size: 20px;
+      position: relative;
+      bottom: 5px;
+    }
+
+    #menu-box img {
+      width: 50px;
+      height: 50px;
+      margin-left: 20px;
+    }
+    /* main */
+    main {
+      height: 75vh;
+      /* background-color: bisque; */
+      display: flex;
+      align-items: flex-end;
+    }
+
+    main > ul {
+      display: flex;
+      align-items: flex-end;
+    }
+    
+    main > ul > li {
+      width:300px;
+      height:320px;
+      background-color: salmon;
+      border-radius: 30px;
+      margin: 0 
+      20px 50px 20px;
+      position: relative;
+    }
+
+    main > ul > li:nth-child(1) {
+      margin-left:70px;
+      background-color: #e43950;
+    }
+
+    main > ul > li:nth-child(2) {
+      background-color: #3f41ce;
+      height: 250px;
+    }
+
+    main > ul > li:nth-child(3) {
+      background-color: #4ba13f;
+    }
+
+    main > ul > li:nth-child(4) {
+      background-color: #7d4ca5;
+      height: 370px;
+    }
+
+
+    #char-info {
+      position: absolute;
+      bottom:75px;
+      left: 40px;
+      color: white;
+    }
+
+
+    #char-info-movie {
+      position: absolute;
+      bottom:50px;
+      left: 40px;
+      color: white;
+    }
+
+    main > ul > li > div:nth-child(2) {
+      font-size: 30px;
+      font-weight: bold;
+    }
+    
+    /* footer */
+    footer {
+      height: 15vh;
+      display: flex;
+      font-size: 20px;
+    }
+
+
+    /* footer  left */
+      footer > #left {
+        width:50%;
+        height: 100%;
+        /* background-color: aquamarine; */
+        
+      }
+      #left > div {
+        position: relative;
+        left:80px;
+        color: #d3d3d3;
+      }
+
+      #left > div > div:nth-child(2) {
+        margin-left: 20px;
+      }
+
+    /* footer right */
+    footer > #right {
+        width:50%;
+        height: 100%;
+        /* background-color: rgb(243, 248, 178); */
+        
+      }
+
+      #right > div {
+        position: relative;
+        left:350px;
+      }
+
+      #right > div > div:nth-child(1) {
+        margin-right: 20px;
+      }
+
+
+  </style>
+</head>
+<body>
+  <div id="container">
+    <header>
+      <div id="logo-box">
+        <div>
+          <a href=""><img src="https://logos-download.com/wp-content/uploads/2016/06/Disney_logo.png" alt=""></a>
+          <div id="characters" class="font-bold">Characters</div>
+        </div>
+        
+      </div>
+      <div id="search-box" class="flex justify-center">
+        <div id="search" class="flex justify-center f0f0f0">
+          <input type="text" class="f0f0f0" placeholder="Search character...">
+        </div>
+        
+      </div>
+      <div id="menu-box" class="flex">
+        <div class="flex">
+          <div class="font-bold">
+            Menu
+          </div>
+          <img src="https://img.icons8.com/material-sharp/384/menu--v1.png" alt="">
+        </div>
+      </div>
+    </header>
+    <main>
+      <ul>
+        <li id="rosetta">
+          <img src="" alt="">
+          <div id="char-info">Rosetta</div>
+          <div id="char-info-movie">Movie Inside Out</div>
+        </li>
+        <li id="sadness">
+          <img src="" alt="">
+          <div id="char-info">Sadness</div>
+          <div id="char-info-movie">Movie Inside Out</div>
+        </li>
+        <li id="disgust">
+          <img src="" alt="">
+          <div id="char-info">Disgust</div>
+          <div id="char-info-movie">Movie Inside Out</div>
+        </li>
+        <li id="judy">
+          <img src="" alt="">
+          <div id="char-info">Judy</div>
+          <div id="char-info-movie">Movie Inside Out</div>
+        </li>
+      </ul>
+    </main>
+    <footer>
+      <div id="left">
+        <div class="flex font-bold">
+          <div>facebook</div>
+          <div>twitter</div>
+        </div>
+      </div>
+      <div id="right">
+        <div class="flex font-bold">
+          <div>Prev</div>
+          <div>Next</div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
