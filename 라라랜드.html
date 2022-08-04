@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="라라랜드.css">
+</head>
+<body>
+  <div id="root">
+    <div id="img-box"></div>
+    <div id="text-box">
+      <h1>TITLE</h1>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, vitae! Laborum dolorum animi sequi aspernatur doloribus officiis corrupti alias quidem suscipit, laboriosam dolorem sunt quam est a iure sint deserunt. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima veritatis dolorum veniam? Perferendis, tempora rem facilis dignissimos nisi ea reiciendis debitis consectetur eos magnam sunt quos quam ipsa aliquam eum! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat culpa dolor non, mollitia molestiae nulla eligendi maiores asperiores! Nisi ex sunt porro libero vitae cum veniam nostrum incidunt maxime fugit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint asperiores at ducimus mollitia veniam quasi nihil voluptatum dignissimos maxime, dolore necessitatibus repellat vero consectetur, suscipit architecto ad quibusdam error et.</p>
+    </div>
+  </div>
+  <script>
+  
+  
+  // for (let i = 0; i < 5; i++) {
+  //   const clone = root.cloneNode(true);
+  //   body.prepend(clone)
+  // }
+
+  for (let i = 0; i < 5; i++) {
+    const root = document.getElementById('root')
+    const rootInnerHTML = root.innerHTML
+    const root2 = document.createElement('div')
+    root2.innerHTML = rootInnerHTML
+    root2.id = 'root';
+    root.after(root2)
+  }
+  
+  </script>
+</body>
+
+</html>
+

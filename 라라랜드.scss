@@ -1,0 +1,107 @@
+@mixin flex($justifyContent :flex-start, $alignItems : flex-start, $flexDirection : row) {
+  display:flex;
+  justify-content:$justifyContent;
+  align-items: $alignItems;
+  flex-direction: $flexDirection;
+}
+
+@mixin position($position, $top : auto, $right : auto, $bottom : auto, $left : auto) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin width-height ($width : auto, $height:auto) {
+  width: $width;
+  height: $height;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+#root {
+  @include width-height(100%, 100vh);
+
+  & div:nth-child(2) {
+    & > h1 {
+      color: white;
+      font-weight: normal;
+    }
+
+    & > p {
+      color: white;
+    }
+  }
+}
+
+#img-box {
+  background-image: url("https://www.wallpapertip.com/wmimgs/6-65658_la-la-land-4k.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+
+@media screen and (min-width: 1025px) {
+  #root {
+    @include position(relative);
+
+    & > div:nth-child(1) {
+      @include width-height (inherit, inherit);
+    }
+
+    & > div:nth-child(2) {
+      border-radius: 20px;
+      background-color: rgba(0, 0, 0, 0.521);
+      padding: 30px;
+      @include position(absolute, 200px,6%);
+      @include flex();
+      @include width-height (800px);
+
+      & > h1 {
+        padding-right:20px;
+      }
+
+      & > p {
+        padding-left:20px;
+        border-left:3px solid rgb(255, 255, 255);
+      }
+    }
+    
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width:1024px) {
+  #root {
+    background-color: rgb(31, 11, 117);
+    padding:100px 30px;
+
+    & > div:nth-child(1) {
+      margin-bottom: 20px;
+      @include width-height(inherit, 40%);
+    }
+  }
+  
+}
+
+@media screen and (max-width: 768px) {
+  #root {
+    padding:50px 0;
+    background-color: rgb(31, 11, 117);
+
+    & > div:nth-child(1) {
+      @include width-height(inherit,40% );
+    }
+    
+    & > div:nth-child(2) {
+      padding: 20px;
+    }
+  }
+}
