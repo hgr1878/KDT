@@ -1,0 +1,639 @@
+@mixin flex ($justifyContent:flex-start, $alignItems:flex-start, $flexDirection:row ) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+  flex-direction: $flexDirection;
+}
+
+@mixin position ($position, $top:auto, $right:auto,$bottom:auto, $left:auto ) {
+  position: $position;
+  top:$top;
+  right:$right;
+  bottom:$bottom;
+  left:$left;
+}
+
+@mixin width-height ($width:auto, $height:auto) {
+  width: $width;
+  height: $height;
+}
+
+@mixin bgi() {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+* {
+  margin : 0;
+  padding :0;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+@media screen and (min-width: 1024px) {
+  #root {
+    @include width-height(100%,100vh );
+    & > #top-box {
+      background-image: url(https://cnbl-cdn.bamgrid.com/assets/9df44aa2f4fa511c4c9283f47f3892e0b45db20129a31ce51b622f249f42a515/original);
+      @include bgi();
+      @include flex(center,center);
+      @include position(relative);
+      @include width-height(inherit, inherit );
+
+      & > #top-bar {
+        background-color: rgba(250, 128, 114, 0);
+        @include position(absolute,0,0);
+        @include width-height(inherit, 8% );
+        z-index: 1;
+        // transition: 1s;
+
+        & > #logo-box {
+          background-image: url("https://cnbl-cdn.bamgrid.com/assets/7ecc8bcb60ad77193058d63e321bd21cbac2fc67281dbd9927676ea4a4c83594/original");
+          @include bgi();
+          @include position(absolute, 14px, auto, auto, 40px);
+          @include width-height(85px,46px );
+          display: none;
+        }
+
+        & > #membership {
+          @include position(absolute,13px,130px);
+          background-color:#0063e500;
+          border:none;
+          border-radius:5px;
+          color: rgba(255, 255, 255, 0);
+          font-size: 20px;
+          font-weight: 300;
+          font-size: 18px;
+          padding:13px 22px;
+          // display: none;
+          // transition: 1s;
+        }
+
+        & > #login-box {
+          @include position(absolute,13px,30px);
+          color:white;
+          border: 1px solid white;
+          border-radius: 4px;
+          background-color: rgba(0, 0, 0, 0.7);
+          padding:13px 22px;
+        }
+
+      }
+
+      & > #text-box {
+        // background-color:salmon;
+        @include width-height(90%,510px);
+        @include flex(flex-start, center);
+
+
+        & > div {
+          // background-color: cadetblue;
+          @include width-height(auto,100% );
+          min-width:40%;
+          max-width: 45%;
+          @include flex();
+          flex-wrap: wrap;
+
+          & > div:nth-child(1) {
+            background-image: url("https://cnbl-cdn.bamgrid.com/assets/7ecc8bcb60ad77193058d63e321bd21cbac2fc67281dbd9927676ea4a4c83594/original");
+            @include width-height(180px,100px);
+            @include bgi();
+          }
+
+          & > h1:nth-child(2) {
+            color: white;
+            font-size: 45px;
+            width:100%;
+          } 
+
+          & > #price-box {
+            // background-color: rgb(219, 85, 85);
+            width:100%;
+            @include flex(space-between);
+
+            & > div:nth-child(1) {
+              @include width-height(50%,190px);
+              // background-color: rgb(131, 131, 49);
+              margin-right: 40px;
+              @include flex(space-between,flex-start,column);
+
+              & > h1 {
+                color: white;
+                font-size: 30px;
+              }
+
+              & > p {
+                color:rgb(194, 194, 194); 
+                font-weight: 300;
+              }
+
+              & > button {
+                background-color:#0063e5;
+                border:none;
+                @include width-height(100%,60px );
+                border-radius:5px;
+                color: white;
+                font-size: 20px;
+                font-weight: 300;
+                font-size: 18px;
+                padding: 0 10px;
+              }
+            }
+
+            & > div:nth-child(2) {
+              @include width-height(50%,190px );
+              // background-color: rgb(182, 111, 64);
+              @include flex(space-between,flex-start,column);
+
+              & > h1 {
+                color: white;
+                font-size: 30px;
+              }
+
+              & > p {
+                color:rgb(194, 194, 194); 
+                font-weight: 300;
+              }
+
+              & > button {
+                background-color:#0063e5;
+                border:none;
+                @include width-height(100%,60px );
+                border-radius:5px;
+                color: white;
+                font-size: 20px;
+                font-weight: 300;
+                font-size: 18px;
+                padding: 0 10px;
+              }
+            }
+          }
+
+          & > div:nth-child(4) {
+            font-size: 12px;
+            color: rgb(194, 194, 194);
+            font-weight: 300;
+        }
+      }
+    }
+    }
+
+    & > #middle-box-1 {
+      @include width-height(inherit,560px);
+      width:inherit;
+      @include flex(center, center);
+      background-color: #030617;
+
+      & > #info-box {
+        // background-color: aquamarine;
+        @include width-height(87%,70%);
+        @include flex(space-between, center);
+
+        & > div {
+          // background-color: salmon;
+          @include width-height(31%,100%);
+          @include flex(flex-start,flex-start,column);
+
+          & > h2 {
+            color: white;
+            font-weight: 400;
+            font-size: 27px;
+            margin: 15px 0;
+          }
+
+          & > p {
+            color: rgb(194, 194, 194);
+            font-weight: 300;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
+    & > #middle-box-2 {
+      @include width-height(inherit);
+      aspect-ratio: 2/1;
+      @include flex(center, center);
+      background-color: #030617;
+
+      & > #contents-box {
+        // background-color: aquamarine;
+        @include width-height(87%,75%);
+        @include flex(space-between, center);
+
+        & #text-box {
+          @include width-height(45%,100%);
+          // background-color: #354ac2;
+          @include flex(center, center,column);
+
+          & > h1 {
+            // background-color: bisque;
+            width:100%;
+            font-size: 40px;
+            margin-bottom:20px;
+            color: white;
+          }
+
+          & > p {
+            // background-color: rgb(223, 139, 204);
+            color: rgb(194, 194, 194); 
+            font-size: 20px;
+            font-weight: 300;
+          }
+
+        }
+
+        & > #img-box {
+          @include width-height(55%,100%);
+          
+          background-image: url("https://cnbl-cdn.bamgrid.com/assets/27ebab12a89bcf920502475cc2c9e160110a0b34deb86b5ef0ef9b0e56c6e69f/original");
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+
+    & > #middle-box-3 {
+      // @include width-height(inherit,1060px);
+      @include width-height(inherit);
+      aspect-ratio: 4/3;
+      @include flex(center, center);
+      background-color: #030617;
+
+      & > #contents-box {
+        // background-color: bisque;
+        @include width-height(87%,75%);
+        @include flex(center,center,column);
+
+        & >h1 {
+          // background-color: rgb(223, 109, 109);
+          color: white;
+          font-size: 40px;
+        }
+
+        & > p {
+          // background-color: rgb(231, 215, 124);
+          color: rgb(194, 194, 194);
+          font-size: 20px;
+          margin: 20px 0;
+        }
+
+
+        & > #flex-box {
+          // background-color: rgb(155, 209, 178);
+          @include width-height(100%,220%);
+          @include flex(space-between);
+          flex-wrap: wrap;
+
+          & > div:nth-child(1) {
+            background-image: url("https://cnbl-cdn.bamgrid.com/assets/e4b3ec643546bcd71289d56f56bd9a4bd5bbcbcdd7cf22e95df90131ce9279ef/original");
+            @include width-height(32%,33%);
+            @include bgi();
+            margin-bottom: 20px;
+          }
+
+          & > div:nth-child(2) {
+            background-image: url("https://cnbl-cdn.bamgrid.com/assets/94b6841839acaae51c3187110b1c499e69c8743d519f2847f84737dfa9f35137/original");
+            @include width-height(32%,33%);
+            @include bgi();
+          }
+
+          & > div:nth-child(3) {
+            background-image: url("https://cnbl-cdn.bamgrid.com/assets/1f6ce0a29787f03e459164cfac39f4fd52f681a16b9602a17de61c45dd272287/original");
+            @include width-height(32%,33%);
+            @include bgi();
+          }
+
+          & > div:nth-child(4) {
+            background-image: url("https://cnbl-cdn.bamgrid.com/assets/bcdb22386f43b433e0229a0826f8c3f74f7f488591166192b766d778097e1436/original");
+            @include width-height(32%,33%);
+            @include bgi();
+            margin-bottom: 20px;
+          }
+
+          & > div:nth-child(5) {
+            background-image: url("https://cnbl-cdn.bamgrid.com/assets/aacbccabf6920b65e03761a0fb3236978e5e5e3131975ee7d1d8a55c5d4370e9/original");
+            @include width-height(32%,33%);
+            @include bgi();
+          }
+
+          & > div:nth-child(6) {
+            background-image: url("https://cnbl-cdn.bamgrid.com/assets/6defdf5237bb3346e603c569e73c3366c2795f0ef9d2f0a3e4a7c5a87e95a465/original");
+            @include width-height(32%,33%);
+            @include bgi();
+          }
+
+          & > div:nth-child(7) {
+            background-image: url("https://cnbl-cdn.bamgrid.com/assets/7aefc4a97201f994f5c8ddf152a381c6544015bf1d8e538a6abb0bacefd69c34/original");
+            @include width-height(32%,33%);
+            @include bgi();
+          }
+
+          & > div:nth-child(8) {
+            background-image: url("https://cnbl-cdn.bamgrid.com/assets/340844fa8172e8ed2f42b511eb88a81891cb8b7907c6c8cdbba6c3a99543797c/original");
+            @include width-height(32%,33%);
+            @include bgi();
+          }
+
+          & > div:nth-child(9) {
+            background-image: url("https://cnbl-cdn.bamgrid.com/assets/999a639a2961f81c353e5b1cfb20e810dd1852fe7be0ee93df578f2e1bc8e36a/original");
+            @include width-height(32%,33%);
+            @include bgi();
+          }
+        }
+      }
+    }
+
+    & > #middle-box-4 {
+      // @include width-height(inherit,1060px);
+      @include width-height(inherit);
+      aspect-ratio: 4/3;
+      @include flex(center, center);
+      background-color: #030617;
+
+      & > #contents-box {
+        // background-color: bisque;
+        @include width-height(87%,75%);
+        @include flex(center,center,column);
+
+        & >h1 {
+          // background-color: rgb(223, 109, 109);
+          color: white;
+          font-size: 40px;
+        }
+
+        & > p {
+          // background-color: rgb(231, 215, 124);
+          color: rgb(194, 194, 194);
+          font-size: 20px;
+          margin: 20px 0;
+        }
+
+
+        & > #flex-box {
+          // background-color: rgb(155, 209, 178);
+          @include width-height(100%,220%);
+          @include flex(space-between);
+          flex-wrap: wrap;
+
+          & > div:nth-child(1) {
+            background-image: url("https://cnbl-cdn.bamgrid.com/assets/d2653e611500f8460620be11ca39f7ac727cdf87f91f001f5fb077bd2a49095c/original");
+            @include width-height(32%,33%);
+            @include bgi();
+            margin-bottom: 20px;
+          }
+
+          & > div:nth-child(2) {
+            background-image: url("https://cnbl-cdn.bamgrid.com/assets/f48a3c9eeea44f75f97e5545abe3216ac70ea05d36458794d6093fdc7512efbe/original");
+            @include width-height(32%,33%);
+            @include bgi();
+          }
+
+          & > div:nth-child(3) {
+            background-image: url("https://cnbl-cdn.bamgrid.com/assets/f0a2ffa3d2621e8ab5a2c720e18cc6a8e2dd1718b42ce0134eeef3b429014b34/original");
+            @include width-height(32%,33%);
+            @include bgi();
+          }
+
+          & > div:nth-child(4) {
+            background-image: url("https://cnbl-cdn.bamgrid.com/assets/76fbc272b7c348d579b36258505d664d27205da99b447538fae5599cbfb8e8c2/original");
+            @include width-height(32%,33%);
+            @include bgi();
+            margin-bottom: 20px;
+          }
+
+          & > div:nth-child(5) {
+            background-image: url("https://cnbl-cdn.bamgrid.com/assets/5485e9a9878853ec87d2eb029773f455b12d12cb6c21ee47707797be5a60ee5f/original");
+            @include width-height(32%,33%);
+            @include bgi();
+          }
+
+          & > div:nth-child(6) {
+            background-image: url("https://cnbl-cdn.bamgrid.com/assets/c79c6205c39d712d6d1420ec7e123897d10574f8522cd1f2ecce1fc243c5a3ef/original");
+            @include width-height(32%,33%);
+            @include bgi();
+          }
+
+          & > div:nth-child(7) {
+            background-image: url("https://cnbl-cdn.bamgrid.com/assets/d5903c0c50bc12a89da24b972f2f3082db53b013b34d30ac4f408ee561cd8474/original");
+            @include width-height(32%,33%);
+            @include bgi();
+          }
+
+          & > div:nth-child(8) {
+            background-image: url("https://cnbl-cdn.bamgrid.com/assets/1e4c517b4fe928d5056af484229a9c37b954aea63d728f20175991b0b6c626d7/original");
+            @include width-height(32%,33%);
+            @include bgi();
+          }
+
+          & > div:nth-child(9) {
+            background-image: url("https://cnbl-cdn.bamgrid.com/assets/7c221866541bf9cd563c8625c57af6d00082774e5d3eb615f86106aa7afef5b8/original");
+            @include width-height(32%,33%);
+            @include bgi();
+          }
+        }
+      }
+    }
+
+    & > #divice-box {
+      @include width-height(inherit,800px);
+      @include flex(center, center);
+      background-color: #030617;
+
+      & > #contents-box {
+        // background-color: bisque;
+        @include width-height(87%,90%);
+        @include flex(center,center,column);
+
+        & > h1 {
+          // background-color: salmon;
+          font-size: 40px;
+          color: white;
+        }
+
+        & > p {
+          // background-color: salmon;
+          margin: 30px 0;
+          color: rgb(194, 194, 194);
+          font-size: 20px;
+        }
+
+        & > #divice {
+          // background-color: cadetblue;
+          @include flex(space-between,center);
+          @include width-height(100%,100% );
+          
+          & > div {
+            @include width-height(22%,100% );
+            // background-color: rgb(52, 97, 39);
+            @include flex (flex-start, center,column);
+
+            & > img {
+              @include width-height(400px,200px );
+              // border:1px solid black;
+            }
+
+            & > h2 {
+              margin-bottom: 20px;
+              color: white;
+              font-size: 30px;
+              font-weight: 400;
+            }
+
+            & > ul > li {
+              text-align: center;
+              color: rgb(194, 194, 194);
+              font-weight: 300;
+              margin:5px 0;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+
+    }
+
+    & #question-box {
+      @include width-height(inherit,770px);
+      @include flex(center, center);
+      background-color: #030617;
+
+      & > #contents-box {
+        // background-color: salmon;
+        @include width-height(87%,75%);
+        @include flex(center,center,column);
+
+        & > h1 {
+          // background-color: rgb(231, 114, 114);
+          @include width-height(100% );
+          text-align:center;
+          font-size: 40px;
+          color: white;
+          margin-bottom: 20px;
+        }
+
+        & > ul {
+          // background-color: rgb(236, 223, 148);
+          @include width-height(100% );
+          
+          & > li {
+            margin-bottom: 20px;
+            background-color: #13151d;
+            padding: 20px;
+            @include position(relative);
+
+            & > #question {
+              color: silver;
+              font-weight: 300;
+              font-size: 22px;
+            }
+
+            & > #answer {
+              height: 0;
+              color: rgba(255, 255, 255, 0);
+              
+              font-size: 20px;
+              font-weight: 300;
+              transition: 0.5s;
+            }
+
+            & > img {
+              @include position(absolute, 0, 0);
+              @include width-height(72px,72px );
+              filter: invert(70%);
+              // border:2px solid black;
+            }
+          }
+
+          & > li:hover > #answer {
+            height: 100px;
+            color: silver;
+            margin-top:20px;
+          }
+
+          & > li:nth-child(2):hover > #answer {
+            height: 250px;
+          }
+
+          & > li:nth-child(3):hover > #answer {
+            height: 80px;
+          }
+
+          & > li:nth-child(4):hover > #answer {
+            height: 50px;
+          }
+
+          & > li:nth-child(5):hover > #answer {
+            height: 160px;
+          }
+
+
+
+        }
+      }
+    }
+
+    & #bottom-box {
+      @include width-height(inherit,400px);
+      @include flex(center, center);
+      background-color: #030617;
+
+      & > #contents-box {
+        // background-color: rgb(138, 31, 19);
+        @include width-height(70%,75%);
+        @include flex(center,center,column);
+
+        & > div:nth-child(1) {
+          background-image: url("https://cnbl-cdn.bamgrid.com/assets/7ecc8bcb60ad77193058d63e321bd21cbac2fc67281dbd9927676ea4a4c83594/original");
+          @include width-height(90px,47px );
+          @include bgi();
+          margin-bottom: 20px;
+
+        }
+
+        & > div:nth-child(2) {
+          // background-color: gold;
+          margin-bottom: 20px;
+
+          & > ul {
+            @include flex();
+          
+            & > li {
+              margin: 0 10px;
+              font-size: 13px;
+              color: silver;
+            }
+          }
+        }
+
+        & > div:nth-child(3) {
+          color: silver;
+          font-size: 13px;
+          margin-bottom: 20px;
+        }
+
+        
+        & > div:nth-child(4) {
+          color: silver;
+          font-size: 13px;
+          margin-bottom: 20px;
+          text-align: center;
+        }
+
+        & > div:nth-child(5) {
+          color: silver;
+          font-size: 13px;
+        }
+
+        & > div:nth-child(6) {
+          color: silver;
+          font-size: 13px;
+        }
+      }
+
+    }
+  }
+}
