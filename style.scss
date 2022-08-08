@@ -1,0 +1,1451 @@
+@mixin flex ($justifyContent:flex-start, $alignItems:flex-start, $flexDirection:row ) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+  flex-direction: $flexDirection;
+}
+
+@mixin position ($position, $top:auto, $right:auto,$bottom:auto, $left:auto ) {
+  position: $position;
+  top:$top;
+  right:$right;
+  bottom:$bottom;
+  left:$left;
+}
+
+@mixin width-height ($width:auto, $height:auto) {
+  width: $width;
+  height: $height;
+}
+
+@mixin bgi() {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+* {
+  margin : 0;
+  padding :0;
+  // list-style: none;
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+  @include width-height(100vw,100vh);
+  overflow-x:hidden;
+}
+
+#root {
+  @include width-height(100%,100%);
+  // background-color: salmon;
+}
+
+@media screen and (min-width: 1025px) {
+  #root {
+
+    & > #first-screen {
+      @include width-height(inherit, inherit);
+      // background-color: rgb(241, 222, 134);
+
+      & > #top-bar {
+        background-color:#2196F3;
+        @include width-height(100%,8%);
+        @include flex(flex-start,center);
+        @include position(relative);
+        padding: 0 40px;
+
+        & > div:nth-child(1) {
+          font-family: 'Do Hyeon', sans-serif;
+          font-size: 21px;
+          color: white;
+          padding-right:10px;
+        }
+
+        & > div:nth-child(2) {
+          // @include position(absolute,25px,auto,auto,102px);
+          // background-color: rgb(231, 126, 126);
+          border-left: 1px solid rgba(255, 255, 255, 0.479);
+          padding-left: 10px;
+          font-family: 'Do Hyeon', sans-serif;
+          font-size: 21px;
+          color: white;
+        }
+
+        & > div:nth-child(3) {
+          @include position(absolute,27px,40px);
+          background-color: white;
+          padding:2px 8px 4px 8px;
+          color: #004EA2;
+          border-radius: 10px;
+          font-size: 12px;
+        }
+
+        & > #menu-button {
+          display: none;
+        }
+      }
+      
+      & > #menu-box {
+        background-color: wihte;
+        @include width-height(100%);
+
+        & > #top-menu-box {
+          @include flex(flex-start,center);
+          box-shadow: 0px 3px 5px rgba(173, 173, 173, 0.671);
+          @include position(relative);
+
+          & > ul {
+            @include flex(flex-start,center);
+            background-color:white;
+            list-style: none;
+
+            & > li {
+              margin : 20px 50px;
+              font-size: 13px;
+              
+            }
+
+            & > li:nth-child(1) {
+              background-color: #004EA2;      
+              padding: 10px 20px;        
+              color: white;
+              font-weight: bold;
+              border-radius: 10px;
+              font-weight: 400;
+            }
+
+          }
+
+          & > div {
+            display: none;
+          }
+        }
+
+        & > #bottom-menu-box {
+          background-color: #F7F7F7;
+          @include flex(flex-start, center);
+
+          & > ul {
+            @include width-height(inherit, 200px);
+            @include flex(center, flex-start,column);
+            @include position(relative, auto,auto ,auto ,50px );
+            padding-left: 50px;
+            // background-color: rgb(150, 130, 20);
+
+            & > li {
+              margin: 5px 10px;
+              font-size: 12px;
+              // background-color: rgb(228, 91, 91);
+              color: #004EA2;
+              font-weight: 300;
+            }
+
+            & > li::marker {
+              color:#D9D9D9;
+            }
+
+            & > li:nth-child(2)::marker {
+              color: #37A0F4;
+            }
+          }
+
+          
+        }
+
+
+
+      }
+
+      & > #main-box {
+        @include width-height(100%, 63%);
+        // background-color: rgb(248, 224, 171);
+        @include flex(center,center,column);
+
+        & > div:nth-child(1) {
+          font-size: 70px;
+          font-weight: 700;
+          letter-spacing:-4px;
+          color: #2196F3;
+        }
+
+        & > div:nth-child(2) {
+          @include flex(center,center);
+          @include position(relative, 0px, auto, 0px, 110px );
+          // background-color: aquamarine;
+          margin:20px 0 140px 0;
+
+
+          & > div {
+            border-bottom: 3px solid #CDCDCD;
+            font-size: 1px;
+            -webkit-transform:scale(0.8);
+          }
+
+          & > div:nth-child(1) {
+            width:25px;
+            margin-right: 20px;
+          }
+
+          & > div:nth-child(2) {
+            width:70px;
+          }
+
+          & > div:nth-child(3) {
+            color: #2196F3;
+          }
+        }
+
+        & > div:nth-child(3) {
+          // background-color: red;
+          @include width-height(280px);
+          
+          // margin-top:150px;
+
+          & > ul {
+            // background-color: blue;
+            @include flex(center, center);
+            list-style: none;
+
+            & > li {
+              @include width-height(7px,7px );
+              border-radius: 20px;
+              background-color: #D9D9D9;
+              margin:5px 3px;
+
+            }
+
+            & > li:nth-child(1) {
+              background-color: #37A0F4;
+            }
+          }
+
+          & > div {
+            text-align: center;
+            font-size: 10px;
+            -webkit-transform:scale(1);
+            color: #2196F3;
+          }
+        }
+
+        & > #box-4 {
+          display: none;
+        }
+
+        & > #box-5 {
+          display: none;
+        }
+      }
+
+    }
+
+    & > #second-screen {
+      // @include width-height(inherit,950px );
+      @include width-height(inherit);
+      aspect-ratio: 4/3;
+      @include flex(center,center);
+      background-color: #0073EE;
+      border-radius: 10px;
+
+      & > #contents-box {
+        // @include width-height(inherit);
+      aspect-ratio: 4/3;
+        // background-color: salmon;
+        @include width-height(95%,60% );
+        @include flex(space-between,flex-start,column);
+
+        & > #top-box {
+          @include width-height(100%,95% );
+          @include flex(space-between,center);
+          // aspect-ratio: 4/3;
+          // background-color: #7843da;
+
+          & > div:nth-child(1) {
+            aspect-ratio: 4/3;
+            font-size: 15vw;
+            font-weight: 900;
+            background: linear-gradient(to right, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            
+
+          }
+
+          & > div:nth-child(2) {
+            @include width-height(60%,50% );
+            // background-color: rgb(228, 78, 78);
+            @include flex(center,center,column);
+
+            & > div:nth-child(1) {
+              width:100%;
+              font-size: 12px;
+              color: white;
+              padding-bottom: 15px;
+            }
+
+            & > div:nth-child(2) {
+              width:100%;
+              border-top: 2px solid white;
+              font-weight: 300;
+              padding-top: 15px;
+              @include flex(flex-start,flex-start,column);
+            
+
+              & > h3 {
+                font-size: 13px;
+                color: white;
+                font-weight: 400;
+              }
+
+              & > p {
+                margin: 0 -76px 0 -55px;
+                color: white;
+                font-weight: 300;
+                font-size: 10px;
+                -webkit-transform:scale(0.7);
+              }
+            }
+          }
+        }
+
+        & > #middle-box {
+          display: none;
+        }
+
+        & > #bottom-box {
+          width:100%;
+          & > ul {
+            list-style: none;
+            @include flex(space-between,center);
+
+            & > li {
+              padding: 2px 21px;
+              border-radius: 20px;
+              background-color: white;
+              font-size: 10px;
+              -webkit-transform:scale(0.8);
+              font-weight: 300;
+              color:#2196F3;
+            }
+          }
+        }
+      }
+    }
+
+    & > #third-screen {
+      @include width-height(inherit,inherit );
+      @include flex(center,center,column);
+      @include position(relative );
+
+      & > #main-box {
+        @include width-height(700px,40% );
+        // background-color: rgb(96, 11, 136);
+        @include flex(center,center,column);
+
+        & > #text-box {
+          font-size: 55px;
+          font-weight: 700;
+          color:  #CDCDCD;
+
+          & > span {
+            color:  #2196F3;
+          }
+        }
+        & > ul {
+          margin-top: 100px;
+          // background-color: salmon;
+          list-style: none;
+          @include flex(space-between,center);
+
+          & > li {
+            border-radius: 10px;
+            background-color:cadetblue;
+            margin:0 15px;
+            padding: 65px 25px;
+            text-align: center;
+
+            & > h3 {
+              font-size: 12px;
+              color: #ffffff;
+              font-weight: 300;
+              margin-bottom: 8px;
+            }
+
+            & > p {
+              font-size: 10px;
+              color: #ffffff;
+              font-weight: 300;
+            }
+          }
+
+          & > li:nth-child(1) {
+            background-color: #2196F3;
+          }
+
+          & > li:nth-child(2) {
+            background-color: rgba(33, 150, 243, 0.8);
+          }
+
+          & > li:nth-child(3) {
+            background-color: rgba(33, 149, 243, 0.507)
+          }
+        }
+
+      }
+
+      & >#foot-box {
+        @include width-height(100%,14% );
+        @include flex(flex-start,center);
+        background-color: #2196F3;
+        @include position(absolute,auto,auto,0,auto );
+
+        & > #left-box {
+          @include width-height(50%,100% );
+          // background-color: rgba(39, 138, 26, 0.651);
+          @include flex(center,flex-end,column);
+          padding-right: 20px;
+
+          & > div:nth-child(1) {
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 21px;
+            color: white;
+            // background-color: rgba(228, 121, 180, 0.651);
+          }
+
+          & > #new-box {
+            @include flex(center,flex-end,column);
+            & > ul {
+              list-style: none;
+              @include flex(center,center);
+              margin:10px 0;
+               
+              & > li {
+                margin:0 10px;
+                font-size: 11px;
+                color:white;
+                font-weight: 300;
+              }
+            }
+  
+            & > div {
+              color: #004EA2;
+              background-color: white;
+              padding: 5px 20px;
+              font-size: 12px;
+              border-radius: 10px;
+            }
+          }
+         
+        }
+
+        & > #right-box {
+          @include flex(center,flex-start,column);
+          border-left: 1px solid rgba(22, 22, 22, 0.5);
+          padding-left: 20px;
+
+          & > div:nth-child(1) {
+            color: white;
+            font-size: 13px;
+            margin-bottom: 5px;
+          }
+
+          & > div:nth-child(2) {
+            color: white;
+            font-size: 11px;
+            font-weight: 300;
+            @include position(relative, 0, auto, 0, 20px);
+          }
+
+        }
+      }
+
+    }
+  }
+}
+
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  #root {
+
+    & > #first-screen {
+      @include width-height(inherit, inherit);
+      // background-color: rgb(241, 222, 134);
+
+      & > #top-bar {
+        background-color:#2196F3;
+        @include width-height(100%,8%);
+        @include flex(center,center);
+        @include position(relative);
+        padding: 0 40px;
+
+        & > div:nth-child(1) {
+          font-family: 'Do Hyeon', sans-serif;
+          font-size: 21px;
+          color: white;
+          padding-right:10px;
+          @include position(relative, 9px);
+        }
+
+        & > div:nth-child(2) {
+          // @include position(absolute,25px,auto,auto,102px);
+          // background-color: rgb(231, 126, 126);
+          border-left: 1px solid rgba(255, 255, 255, 0.479);
+          padding-left: 10px;
+          font-family: 'Do Hyeon', sans-serif;
+          font-size: 21px;
+          color: white;
+          @include position(relative, 9px);
+        }
+
+        & > div:nth-child(3) {
+          @include position(absolute,35px,40px);
+          background-color: white;
+          padding:2px 8px 4px 8px;
+          color: #004EA2;
+          border-radius: 10px;
+          font-size: 12px;
+        }
+
+        & > #menu-button {
+          @include position (absolute,35px,auto,auto,40px);
+          @include width-height(20px,20px);
+
+          & > div:nth-child(1) {
+            @include width-height(20px,3px);
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+          }
+
+          & > div:nth-child(2) {
+            @include width-height(30px,3px);
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            margin:5px 0;
+          }
+
+          & > div:nth-child(3) {
+            @include width-height(25px,3px);
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+          }
+          
+          
+        }
+      }
+      
+      & > #menu-box {
+        background-color: wihte;
+        @include width-height(100%);
+
+        & > #top-menu-box {
+          @include flex(center,center);
+          // border:1px solid black;
+          box-shadow: 0px 3px 5px rgba(173, 173, 173, 0.671);
+          @include position(relative);
+
+          & > ul {
+            @include flex(flex-start,center);
+            background-color:white;
+            list-style: none;
+
+            & > li {
+              margin : 20px 40px;
+              font-size: 13px;
+              
+            }
+
+            & > li:nth-child(1) {
+              background-color: #004EA2;      
+              padding: 10px 20px;        
+              color: white;
+              font-weight: bold;
+              border-radius: 10px;
+              font-weight: 400;
+            }
+
+          }
+
+          & > div {
+            font-weight: 900;
+            @include position(absolute, auto, 40px);
+            color: #37A0F4;
+            
+          }
+        }
+
+        & > #bottom-menu-box {
+          background-color: #F7F7F7;
+          @include flex(center,center);
+
+          & > ul {
+            @include width-height(inherit, 200px);
+            @include flex(center,flex-start,column);
+            @include position(relative,auto,160px,auto,auto);
+            padding-left: 50px;
+            // background-color: rgb(185, 161, 25);
+
+            & > li {
+              margin: 5px 10px;
+              font-size: 12px;
+              // background-color: rgb(228, 91, 91);
+              color: #004EA2;
+              font-weight: 300;
+            }
+
+            & > li::marker {
+              color:#D9D9D9;
+            }
+
+            & > li:nth-child(2)::marker {
+              color: #37A0F4;
+            }
+          }
+        }
+
+
+
+      }
+
+      & > #main-box {
+        @include width-height(100%, 80%);
+        // background-color: rgb(248, 224, 171);
+        @include flex(center,center,column);
+
+        & > div:nth-child(1) {
+          font-size: 70px;
+          font-weight: 700;
+          letter-spacing:-4px;
+          color: #2196F3;
+        }
+
+        & > div:nth-child(2) {
+          @include flex(center,center);
+          @include position(relative, 0px, auto, 0px, 100px );
+          // background-color: aquamarine;
+          margin:20px 0 140px 0;
+
+
+          & > div {
+            border-bottom: 3px solid #CDCDCD;
+            font-size: 1px;
+            -webkit-transform:scale(0.8);
+          }
+
+          & > div:nth-child(1) {
+            width:25px;
+            margin-right: 20px;
+          }
+
+          & > div:nth-child(2) {
+            width:70px;
+          }
+
+          & > div:nth-child(3) {
+            color: #2196F3;
+          }
+        }
+
+        & > div:nth-child(3) {
+          // background-color: red;
+          @include width-height(280px);
+          
+          // margin-top:150px;
+
+          & > ul {
+            // background-color: blue;
+            @include flex(center, center);
+            list-style: none;
+
+            & > li {
+              @include width-height(7px,7px );
+              border-radius: 20px;
+              background-color: #D9D9D9;
+              margin:5px 3px;
+
+            }
+
+            & > li:nth-child(1) {
+              background-color: #37A0F4;
+            }
+          }
+
+          & > div {
+            text-align: center;
+            font-size: 10px;
+            -webkit-transform:scale(1);
+            color: #2196F3;
+          }
+        }
+
+        & > #box-4 {
+          display: none;
+        }
+
+        & > #box-5 {
+          display: none;
+        }
+      }
+
+    }
+
+    & > #second-screen {
+      // @include width-height(inherit,950px );
+      @include width-height(100%,871px);
+      aspect-ratio: 4/3;
+      @include flex(center,center);
+      background-color: #0073EE;
+      border-radius: 10px;
+
+      & > #contents-box {
+        // @include width-height(inherit);
+      aspect-ratio: 4/3;
+        
+        @include width-height(80%,60% );
+        @include flex(space-between,center,row);
+
+        & > #top-box {
+          @include width-height(42%,100% );
+          @include flex(center,center,column);
+          // background-color: salmon;
+          // aspect-ratio: 4/3;
+          // background-color: #7843da;
+
+          & > div:nth-child(1) {
+            font-size: 3.8vw;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+
+          }
+
+          & > div:nth-child(2) {
+            // background-color: rgb(228, 78, 78);
+            @include flex(center,center,column);
+
+            & > div:nth-child(1) {
+              width:100%;
+              font-size: 12px;
+              color: white;
+              padding-bottom: 15px;
+            }
+
+            & > div:nth-child(2) {
+              width:100%;
+              border-top: 2px solid white;
+              font-weight: 300;
+              padding-top: 15px;
+              @include flex(flex-start,flex-start,column);
+            
+
+              & > h3 {
+                font-size: 13px;
+                color: white;
+                font-weight: 400;
+              }
+
+              & > p {
+                margin: 0 -76px 0 -55px;
+                color: white;
+                font-weight: 300;
+                font-size: 10px;
+                -webkit-transform:scale(0.7);
+              }
+            }
+          }
+        }
+
+        & > #middle-box {
+          color: white;
+        }
+
+        & > #bottom-box {
+          @include width-height(53%,100% );
+          @include flex(center,center);
+          // background-color: gold;
+
+          & > ul {
+            list-style: none;
+            @include flex(flex-start,center);
+            flex-wrap: wrap;
+
+            & > li {
+              padding: 3px 25px;
+              border-radius: 20px;
+              background-color: white;
+              font-size: 10px;
+              // -webkit-transform:scale(0.8);
+              font-weight: 300;
+              color:#2196F3;
+              margin: 7px 5px;
+            }
+          }
+        }
+      }
+    }
+
+    & > #third-screen {
+      @include width-height(inherit,inherit );
+      @include flex(center,center,column);
+      @include position(relative );
+
+      & > #main-box {
+        @include width-height(700px,40% );
+        // background-color: rgb(96, 11, 136);
+        @include flex(center,center,column);
+
+        & > #text-box {
+          font-size: 60px;
+          font-weight: 700;
+          color:  #CDCDCD;
+
+          & > span {
+            color:  #2196F3;
+          }
+        }
+        & > ul {
+          width: 85%;
+          margin-top: 100px;
+          // background-color: salmon;
+          list-style: none;
+          @include flex(space-between,center);
+
+          & > li {
+            border-radius: 10px;
+            background-color:cadetblue;
+            margin:0 15px;
+            padding: 75px 25px;
+            text-align: center;
+
+            & > h3 {
+              font-size: 15px;
+              color: #ffffff;
+              font-weight: 300;
+              margin-bottom: 8px;
+            }
+
+            & > p {
+              font-size: 12px;
+              color: #ffffff;
+              font-weight: 300;
+            }
+          }
+
+          & > li:nth-child(1) {
+            background-color: #2196F3;
+          }
+
+          & > li:nth-child(2) {
+            background-color: rgba(33, 150, 243, 0.8);
+          }
+
+          & > li:nth-child(3) {
+            background-color: rgba(33, 149, 243, 0.507)
+          }
+        }
+
+      }
+
+      & >#foot-box {
+        @include width-height(100%,14% );
+        @include flex(flex-start,center);
+        background-color: #2196F3;
+        @include position(absolute,auto,auto,0,auto );
+
+        & > #left-box {
+          @include width-height(50%,100% );
+          // background-color: rgba(39, 138, 26, 0.651);
+          @include flex(center,flex-end,column);
+          padding-right: 20px;
+
+          & > div:nth-child(1) {
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 21px;
+            color: white;
+            // background-color: rgba(228, 121, 180, 0.651);
+          }
+
+          & > #new-box {
+            @include flex(center,flex-end,column);
+            & > ul {
+              list-style: none;
+              @include flex(center,center);
+              margin:10px 0;
+               
+              & > li {
+                margin:0 10px;
+                font-size: 11px;
+                color:white;
+                font-weight: 300;
+              }
+            }
+  
+            & > div {
+              color: #004EA2;
+              background-color: white;
+              padding: 5px 20px;
+              font-size: 12px;
+              border-radius: 10px;
+            }
+          }
+        }
+
+        & > #right-box {
+          @include flex(center,flex-start,column);
+          border-left: 1px solid rgba(22, 22, 22, 0.5);
+          padding-left: 20px;
+          
+          
+
+          & > div:nth-child(1) {
+            color: white;
+            font-size: 13px;
+            margin-bottom: 5px;
+          }
+
+          & > div:nth-child(2) {
+            color: white;
+            font-size: 11px;
+            font-weight: 300;
+            @include position(relative, 0, auto, 0, 20px);
+          }
+
+        }
+      }
+
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  #root {
+
+    & > #first-screen {
+      @include width-height(inherit, inherit);
+      // background-color: rgb(241, 222, 134);
+
+      & > #top-bar {
+        background-color:#2196F3;
+        @include width-height(100%,8%);
+        @include flex(center,center);
+        @include position(relative);
+        padding: 0 40px;
+
+        & > div:nth-child(1) {
+          font-family: 'Do Hyeon', sans-serif;
+          font-size: 25px;
+          color: white;
+          padding-right:10px;
+          @include position(relative, 9px);
+        }
+
+        & > div:nth-child(2) {
+          // @include position(absolute,25px,auto,auto,102px);
+          // background-color: rgb(231, 126, 126);
+          border-left: 1px solid rgba(255, 255, 255, 0.479);
+          padding-left: 10px;
+          font-family: 'Do Hyeon', sans-serif;
+          font-size: 25px;
+          color: white;
+          @include position(relative, 9px);
+        }
+
+        & > div:nth-child(3) {
+          @include position(absolute,35px,40px);
+          background-color: white;
+          padding:2px 8px 4px 8px;
+          color: #004EA2;
+          border-radius: 10px;
+          font-size: 12px;
+        }
+
+        & > #menu-button {
+          @include position (absolute,35px,auto,auto,40px);
+          @include width-height(20px,20px);
+
+          & > div:nth-child(1) {
+            @include width-height(20px,3px);
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+          }
+
+          & > div:nth-child(2) {
+            @include width-height(30px,3px);
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            margin:5px 0;
+          }
+
+          & > div:nth-child(3) {
+            @include width-height(25px,3px);
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+          }
+          
+          
+        }
+      }
+      
+      & > #menu-box {
+        background-color: wihte;
+        @include width-height(100%);
+
+        & > #top-menu-box {
+          @include flex(center,center);
+          // border:1px solid black;
+          box-shadow: 0px 3px 5px rgba(173, 173, 173, 0.671);
+          @include position(relative);
+
+          & > ul {
+            @include flex(flex-start,center);
+            background-color:white;
+            list-style: none;
+
+            & > li {
+              margin : 10px 40px;
+              font-size: 13px;
+              display: none;
+              
+            }
+
+            & > li:nth-child(1) {
+              background-color: #004EA2;      
+              padding: 10px 30px;        
+              color: white;
+              font-weight: bold;
+              border-radius: 10px;
+              font-weight: 400;
+              display: block;
+              font-size: 18px;
+            }
+
+          }
+
+          & > div {
+            font-weight: 900;
+            @include position(absolute, auto, 40px);
+            color: #37A0F4;
+            
+          }
+        }
+
+        & > #bottom-menu-box {
+          background-color: #F7F7F7;
+          @include flex(center,center);
+
+          & > ul {
+            @include width-height(inherit, 200px);
+            @include flex(center,flex-start,column);
+            @include position(relative,auto,50px,auto,auto);
+            padding-left: 50px;
+            // background-color: rgb(185, 161, 25);
+
+            & > li {
+              margin: 5px 10px;
+              font-size: 12px;
+              // background-color: rgb(228, 91, 91);
+              color: #004EA2;
+              font-weight: 300;
+            }
+
+            & > li::marker {
+              color:#D9D9D9;
+            }
+
+            & > li:nth-child(2)::marker {
+              color: #37A0F4;
+            }
+          }
+        }
+
+
+
+      }
+
+      & > #main-box {
+        @include width-height(100%, 63%);
+        // background-color: rgb(248, 224, 171);
+        @include flex(center,center,column);
+        // padding:0 60px;
+
+        & > div:nth-child(1) {
+          font-size: 70px;
+          font-weight: 700;
+          letter-spacing:-4px;
+          color: #2196F3;
+          display: none;
+        }
+
+        & > div:nth-child(2) {
+          @include flex(center,center);
+          @include position(relative, auto, auto, 100px, 70px );
+          background-color: rgba(127, 255, 212, 0.164);
+          margin:20px 0 140px 0;
+          display: none;
+
+          & > div {
+            border-bottom: 3px solid #CDCDCD;
+            font-size: 1px;
+            -webkit-transform:scale(0.8);
+          }
+
+          & > div:nth-child(1) {
+            @include width-height(20px,100px );
+            width:25px;
+            margin-right: 10px;
+          }
+
+          & > div:nth-child(2) {
+            @include width-height(70px,100px );
+          }
+
+          & > div:nth-child(3) {
+            color: #2196F3;
+            @include width-height(120px,100px );
+          }
+        }
+
+        & > div:nth-child(3) {
+          // background-color: red;
+          @include width-height(280px);
+          display: none;
+
+          & > ul {
+            // background-color: blue;
+            @include flex(center, center);
+            list-style: none;
+
+            & > li {
+              @include width-height(7px,7px );
+              border-radius: 20px;
+              background-color: #D9D9D9;
+              margin:5px 3px;
+
+            }
+
+            & > li:nth-child(1) {
+              background-color: #37A0F4;
+            }
+          }
+
+          & > div {
+            text-align: center;
+            font-size: 10px;
+            -webkit-transform:scale(1);
+            color: #2196F3;
+          }
+        }
+
+        & > #box-4 {
+
+          & > div:nth-child(1) {
+          font-size: 70px;
+          font-weight: 700;
+          letter-spacing:-4px;
+          color: #2196F3;
+          }
+
+          & > ul:nth-child(2) {
+            @include flex(center,center);
+            @include position(relative, auto, auto, 80px, 90px );
+            // background-color: rgba(127, 255, 212, 0.164);
+            list-style: none;
+
+            & > li {
+              border-bottom: 3px solid #CDCDCD;
+              font-size: 1px;
+              -webkit-transform:scale(0.9);
+            }
+  
+            & > li:nth-child(1) {
+              @include width-height(20px,100px );
+              width:25px;
+              margin-right: 10px;
+            }
+  
+            & > li:nth-child(2) {
+              @include width-height(70px,100px );
+            }
+  
+            & > li:nth-child(3) {
+              color: #2196F3;
+              @include width-height(150px,100px );
+            }
+
+          }
+        }
+
+        & > #box-5 {
+          & > ul {
+            // background-color: blue;
+            @include flex(center, center);
+            list-style: none;
+
+            & > li {
+              @include width-height(7px,7px );
+              border-radius: 20px;
+              background-color: #D9D9D9;
+              margin:5px 3px;
+
+            }
+
+            & > li:nth-child(1) {
+              background-color: #37A0F4;
+            }
+          }
+
+          & > div {
+            text-align: center;
+            font-size: 10px;
+            -webkit-transform:scale(1);
+            color: #2196F3;
+          }
+        }
+
+        
+
+      }
+
+    }
+
+    & > #second-screen {
+      // @include width-height(inherit,950px );
+      @include width-height(100%,871px);
+      @include flex(center,center);
+      background-color: #0073EE;
+      border-radius: 10px;
+
+      & > #contents-box {
+        // @include width-height(inherit);
+        @include width-height(75%,100% );
+        @include flex(center,center,column);
+        // background-color: rgb(76, 150, 46);
+        
+
+
+        & > #top-box {
+          @include width-height(100% );
+          @include flex(center,flex-start,column);
+          // background-color: salmon;
+          // aspect-ratio: 4/3;
+          // background-color: #7843da;
+          @include position(relative );
+
+          & > div:nth-child(1) {
+            font-size: 6vw;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+            @include width-height(50% );
+
+          }
+
+          & > div:nth-child(2) {
+            // background-color: rgb(228, 78, 78);
+            @include flex(center,center,column);
+            @include width-height(90% );
+
+            & > div:nth-child(1) {
+              width:100%;
+              font-size: 16px;
+              color: white;
+              padding-bottom: 15px;
+            }
+
+            & > div:nth-child(2) {
+              @include width-height(90% );
+              border-top: 2px solid white;
+              font-weight: 300;
+              padding-top: 10px;
+              @include flex(flex-start,flex-start);
+              @include position(absolute, 280px, auto,auto ,80px );
+            
+
+              & > h3 {
+                font-size:20px;
+                color: white;
+                font-weight: 700;
+                margin-right:30px;
+              }
+
+              & > p {
+                color: white;
+                font-weight: 300;
+                font-size: 10px;
+                -webkit-transform:scale(0.8);
+              }
+            }
+          }
+        }
+
+        & > #middle-box {
+          color: white;
+          @include position(relative, 170px);
+          font-size:25px;
+        }
+
+        & > #bottom-box {
+          @include width-height(120% );
+          @include flex(center,center);
+          @include position(relative,190px,0,auto,0);
+          // background-color: gold;
+
+          & > ul {
+            list-style: none;
+            @include flex(space-between,center);
+            flex-wrap: wrap;
+
+            & > li {
+              padding: 5px 30px;
+              border-radius: 20px;
+              background-color: white;
+              font-size: 10px;
+              font-weight: 400;
+              color:#2196F3;
+              margin: 8px;
+              
+            }
+          }
+        }
+      }
+    }
+
+    & > #third-screen {
+      @include width-height(inherit,1200px );
+      @include flex(center,center,column);
+      @include position(relative );
+
+      & > #main-box {
+        @include width-height(100%,50% );
+        // background-color: rgb(96, 11, 136);
+        @include flex(center,center,column);
+
+        & > #text-box {
+          @include width-height(500px);
+          font-size: 85px;
+          font-weight: 700;
+          color:  #CDCDCD;
+          // background-color: orange;
+
+          & > span {
+            color:  #2196F3;
+          }
+        }
+        & > ul {
+          margin-top: 100px;
+          // background-color: salmon;
+          list-style: none;
+          @include flex(space-between,center);
+          @include position(relative, 0, auto,0 ,50px );
+
+          & > li {
+            border-radius: 10px;
+            background-color:cadetblue;
+            margin:0 15px;
+            padding: 65px 25px;
+            text-align: center;
+
+            & > h3 {
+              font-size: 12px;
+              color: #ffffff;
+              font-weight: 300;
+              margin-bottom: 8px;
+            }
+
+            & > p {
+              font-size: 10px;
+              color: #ffffff;
+              font-weight: 300;
+            }
+          }
+
+          & > li:nth-child(1) {
+            background-color: #2196F3;
+          }
+
+          & > li:nth-child(2) {
+            background-color: rgba(33, 150, 243, 0.8);
+          }
+
+          & > li:nth-child(3) {
+            background-color: rgba(33, 149, 243, 0.507)
+          }
+        }
+
+      }
+
+      & >#foot-box {
+        @include width-height(100%,20% );
+        @include flex(flex-start,center,column);
+        background-color: #2196F3;
+        @include position(absolute,auto,auto,0,auto );
+
+        & > #left-box {
+          @include width-height(90%,100px );
+          // background-color: rgba(39, 138, 26, 0.651);
+          @include flex(center,center,column);
+          flex-direction: wrap;
+          border-bottom: 1px solid black;
+
+          & > div:nth-child(1) {
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 21px;
+            color: white;
+            text-align: center;
+            
+          }
+
+          & > #new-box {
+            @include flex(space-between,center);
+            // background-color: rgba(228, 121, 180, 0.651);
+            width:100%;
+            & > ul {
+              list-style: none;
+              @include flex(space-between,center);
+              margin:10px 0;
+               
+              & > li {
+                margin:0 10px;
+                font-size: 11px;
+                color:white;
+                font-weight: 300;
+              }
+            }
+  
+            & > div {
+              color: #004EA2;
+              background-color: white;
+              padding: 5px 20px;
+              font-size: 12px;
+              border-radius: 10px;
+            }
+          }
+        }
+
+        & > #right-box {
+          margin-top: 10px;
+          // background-color: red;
+          width: 90%;
+
+          & > div:nth-child(1) {
+            color: white;
+            font-size: 13px;
+            margin-bottom: 5px;
+          }
+
+          & > div:nth-child(2) {
+            color: white;
+            font-size: 11px;
+            font-weight: 300;
+            @include position(relative, 0, auto, 0, 20px);
+          }
+
+        }
+      }
+
+    }
+  }
+}
+
