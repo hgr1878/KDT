@@ -6,147 +6,127 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Rubik:wght@500&display=swap" rel="stylesheet">
+</head>
 <body>
-  <div id="root">
-    <div id="first-screen">
-      <div id="top-bar">
-        <div>GREEN</div>
-        <div>대전둔산</div>
-        <div>sign in</div>
-        <div id="menu-button">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-      <div id="menu-box">
-        <div id="top-menu-box">
-          <ul>
-            <li>K-Digital Training</li>
-            <li>웹디자인</li>
-            <li>편집디자인</li>
-            <li>건축·산업디자인</li>
-            <li>게임·영상·마야</li>
-          </ul>
-          <div>></div>
-        </div>
-        <div id="bottom-menu-box">
-          <ul>
-            <li>web programming</li>
-            <li>Git & Github</li>
-            <li>Javascript</li>
-            <li>front-end framework</li>
-            <li>back-end framework</li>
-            <li>DevOps</li>
-          </ul>
-        </div>
-        
-      </div>
-      <div id="main-box">
-        <div id="box-1">Korea Digital Training</div>
-        <div id="box-2">
-          <div>&nbsp;</div>
-          <div>&nbsp;</div>
-          <div>Experience training in field projects with the Green Computer Academy and digital companies</div>
-        </div>
-        <div id="box-3">
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-          <div>Experience training in field projects with the Green Computer Academy and digital companies</div>
-        </div>
-        <div id="box-4">
-          <div>Korea Digital<br> Training</div>
-          <ul>
-            <li></li>
-            <li></li>
-            <li>Experience training in<br> field projects with the<br> Green Computer<br> Academy and digital<br> companies</li>
-          </ul>
-        </div>
-        <div id="box-5">
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-          <div>Experience training in field projects with the Green<br> Computer Academy and digital companies</div>
-        </div>
-      </div>
+  <!-- 루트 -->
+  <div id="root"> 
+    <!-- 사이드 바 -->
+    <div id="side-bar">
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
     </div>
-    <div id="second-screen">
-      <div id="contents-box">
-        <div id="top-box">
-          <div>K-Digital Training</div>
-          <div>
-            <div>K-Digital Training은 우리나라 디지털, 신기술 분야에서 핵심적인 역할을 담당할 인재를 양성하기 위해 고용노동부와 함께하는 훈련과정이며, ‘국민내일배움카드’만 발급받으면 정부의 전액 지원으로 무료 수강할 수 있습니다.</div>
-            <div>
-              <h3>HRD information</h3>
-              <p>그린컴퓨터아트학원<br> 대전 기업에서 요구하는 프레임워크를 활용한 풀스택 개발자(NODE,ECMAscript)양성과정 <br>전액무료</p>
+    <!-- 메인 박스 -->
+    <div id="main-box">
+      <!-- 왼쪽 박스 -->
+      <div id="left-box">
+        <!-- logo-happy-box -->
+        <div id="logo-happy-box">
+          <div id="logo-box">WAVER</div>
+          <div id="happy-box">Happy</div>
+        </div>
+        <!-- login-box -->
+        <div id="login-box">
+          <div id="top-box">
+            <div id="Id-login-box">ID 로그인</div>
+            <div id="once-number-box">일회용 번호</div>
+          </div>
+          <div id="buttom-box">
+            <div id="first-box">ID</div>
+            <div id="second-box">PASSWORD</div>
+            <div id="third-box">Forgot Password?</div>
+            <div id="fourth-box">
+              <div id="login-button">로그인</div>
+              <div id="ip-security">IP Security</div>
+              <div id="toggle">
+                <div id="circle"></div>
+              </div>
             </div>
+
           </div>
         </div>
-        <div id="middle-box">></div>
+        <!-- kosdaq-box -->
+        <div id="kosdaq-box">
+          <div id="text-box">증시</div>
+          <div id="stock-box">
+            <div>KOSDAQ</div>
+            <div></div>
+            <div>203332.124</div>
+          </div>
+          <div id="menu-button">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <!-- weather-box -->
+        <div id="weather-box">
+          <div id="text-box">날씨</div>
+          <div id="info-box">비 온뒤 땅이 굳을 예정</div>
+          <div id="menu-button">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <!-- 오른쪽 박스 -->
+      <div id="right-box">
+        <!-- 위쪽 박스 -->
+        <div id="top-box">
+          <!-- news-text-box -->
+           <div id="news-text-box">뉴스</div>
+           <!-- img-box -->
+           <div id="img-box">FIGMA</div>
+           <!-- menu-button -->
+           <ul id="menu-button">
+            <li></li>
+            <li></li>
+            <li></li>
+           </ul>
+           <!-- title-box -->
+           <div id="title-box">
+            <div>충격 속보</div>
+            <div>></div>
+            <div><span>피그마</span>, 결국 쓸모 있는 것으로 밝혀져</div>
+           </div>
+           <!-- text-box -->
+           <div id="text-box">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam obcaecati nisi expedita nobis officiis! Impedit rerum eius nam eum ipsa perferendis dolorum tempore reprehenderit molestias ullam, cum aut veritatis inventore? </div>
+        </div>
+        <!-- 아래쪽 박스 -->
         <div id="bottom-box">
-          <ul>
-            <li>웹 프로그래밍 기본(HTML5 & CSS3)</li>
-            <li>OPEN API</li>
-            <li>Python</li>
-            <li>Babel Javascript</li>
-            <li>Next.js</li>
-            <li>Django</li>
-            <li>Node.js</li>
-            <li>의사소통 능력과 협업(팀워크) 능력</li>
-            <li>Git & Github</li>
-            <li>Express.js</li>
-            <li>React</li>
-            <li>서비스 개발을 위한 프로젝트 수행 기법 특강</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div id="third-screen">
-      <div id="main-box">
-        <div id="text-box"><span>Don’t</span> dwell on the past</div>
-        <ul>
-          <li>
-            <h3>수강료 조회</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque, amet sit laoreet consectetur id risus</p>
-          </li>
-          <li>
-            <h3>온라인 상담</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque, amet sit laoreet consectetur id risus</p>
-          </li>
-          <li>
-            <h3>온라인 결제</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque, amet sit laoreet consectetur id risus</p>
-          </li>
-        </ul>
-      </div>
-      <div id="foot-box">
-        <div id="left-box">
-          <div>그린컴퓨터아트학원 대전둔산</div>
-          <div id="new-box">
-            <ul>
-              <li>이용약관</li>
-              <li>개인보호정책</li>
-              <li>제휴제안</li>
-              <li>사이트맵</li>
-              <li>오류신고</li>
-            </ul>
-            <div>042.476.2111</div>
+          <div>
+            <div>Creators</div>
+            <div>Partners</div>
+            <div>Developers</div>
+          </div>
+          <div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div>
+            <div>크리에이터</div>
+            <div>스쿨비즈니스</div>
+            <div></div>
+            <div>SME 풀케어 시스템</div>
+            <div>비즈니스</div>
+            <div>스토어 개설</div>
+            <div>네이버 개발자 센터</div>
+            <div>Open API</div>
+            <div></div>
           </div>
         </div>
-        <div id="right-box">
-          <div>COMPANY INFORMATION</div>
-          <div>대표자 : 피카츄 <br>사업자등록번호 : 123-45-67890 <br>통신판매업신고 : 1234-대전서구-2345호 <br>학원등록번호 : 제 1234호 <br>주소 : 대전광역시 서구 대덕대로 182, 오라클빌딩 3F, 10F 일부</div>
-        </div>
       </div>
     </div>
+      
   </div>
 </body>
 </html>
