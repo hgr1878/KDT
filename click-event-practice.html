@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul class="row">
+    <li class="mouseover">피카츄</li>
+    <li class="mouseover">피카츄</li>
+    <li class="mouseover">피카츄</li>
+    <li class="mouseover">피카츄</li>
+    <li class="mouseover">피카츄</li>
+    <li class="mouseover">피카츄</li>
+  </ul>
+
+  <script>
+    const ul = document.getElementsByTagName('ul')[0];
+    const lis = ul.children
+
+    console.log(lis)
+
+    ul.style.backgroundColor='#f7f28e'
+    ul.style.width = '800px'
+    ul.style.height = '200px'
+    ul.style.display = 'flex'
+    ul.style.alignItems = 'center'
+    ul.style.justifyContent = 'center'
+    ul.style.listStyle = 'none'
+    ul.style.padding = '0'
+    
+    for(let li of lis) {
+      li.style.margin = '10px'
+      li.style.backgroundColor = 'white'
+      li.style.width = '100px'
+      li.style.height = '100px'
+      li.style.display = 'flex'
+      li.style.alignItems = 'center'
+      li.style.justifyContent = 'center'
+      li.style.color = 'white'
+
+    }
+
+    ul.addEventListener('click',function() {
+      if(ul.classList.contains('row')) {
+        ul.style.flexDirection = 'column'
+        ul.style.width = '200px'
+        ul.style.height = '800px'
+        ul.classList.remove('row')
+        ul.classList.add('column')
+      } else if (ul.classList.contains('column')) {
+        ul.style.flexDirection = 'row'
+        ul.style.width = '800px'
+        ul.style.height = '200px'
+        ul.classList.remove('column')
+        ul.classList.add('row')
+      }
+    })
+
+    ul.addEventListener('mouseover',function(e) {
+      setTimeout(() => {
+        if(e.target.classList.contains('mouseover')) {
+          for(let li of lis) {
+            li.style.backgroundColor = 'salmon'
+            li.style.transition = '0.5s'
+          }
+        } 
+        else if (!e.target.classList.contains('mouseover')) {
+          for(let li of lis) {
+            li.style.transition = '0.5s'
+            li.style.backgroundColor = 'cadetblue'
+          }
+        } 
+      }, 1000);
+
+      
+    })
+  </script>
+</body>
+</html>
