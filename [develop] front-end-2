@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin:0;
+      padding:0;
+      list-style: none;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <h1></h1>
+  </div>
+
+  <script>
+    
+    let tictok = ['tic','tok'];
+    const root = document.getElementById('root');
+    const title = root.children[0];
+    root.style.width = '100vw';
+    root.style.height = '100vh';
+    root.style.display = 'flex';
+    root.style.alignItems = 'center';
+    root.style.justifyContent = 'center';
+    title.style.fontSize = '50px';
+    title.style.userSelect = 'none';
+
+    console.log(title)
+
+    let isSwitch = true;
+    root,addEventListener('click',function() {
+      if (isSwitch === true) {
+        isSwitch = false;
+        console.log(isSwitch);
+        title.textContent = tictok[0].toUpperCase();
+        title.style.color = '#333'
+        root.style.backgroundColor = 'salmon'
+      } else {
+        isSwitch = true;
+        console.log(isSwitch);
+        title.textContent=tictok[1].toUpperCase()
+        title.style.color = 'salmon'
+        root.style.backgroundColor = '#333'
+      }
+    })
+
+    document.get
+
+  </script>
+</body>
+</html>
